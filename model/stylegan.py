@@ -118,7 +118,7 @@ class Conv2d(Conv2D):
         else:
             w = self.kernel_modifier(self.kernel)
             
-        outputs = self._convolution_op(inputs, w * runtime_coef(self.kernel_size, self.gain, inputs.shape[1], self.filters))
+        outputs = self.convolution_op(inputs, w * runtime_coef(self.kernel_size, self.gain, inputs.shape[1], self.filters))
         
         if self.use_bias:
             b = self.bias * self.lrmul        
