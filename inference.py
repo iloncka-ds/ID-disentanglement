@@ -23,8 +23,8 @@ class Inference(object):
                 print(f'Could not find a single pair with name: {img_name.stem}')
                 continue
 
-            id_img = utils.read_image(id_path, self.args.resolution, self.args.reals)
-            attr_img = utils.read_image(attr_path, self.args.resolution, self.args.reals)
+            id_img = utils.read_image(id_path[0], self.args.resolution, self.args.reals)
+            attr_img = utils.read_image(attr_path[0], self.args.resolution, self.args.reals)
 
             out_img = self.G(id_img, attr_img)[0]
 
